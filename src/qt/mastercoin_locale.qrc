@@ -1,0 +1,17 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ca">locale/mastercoin_ca.qm</file>
+        <file alias="da">locale/mastercoin_da.qm</file>
+        <file alias="de">locale/mastercoin_de.qm</file>
+        <file alias="en">locale/mastercoin_en.qm</file>
+        <file alias="en_US">locale/mastercoin_en_US.qm</file>
+        <file alias="es">locale/mastercoin_es.qm</file>
+        <file alias="fr_FR">locale/mastercoin_fr_FR.qm</file>
+        <file alias="it">locale/mastercoin_it.qm</file>
+        <file alias="ja">locale/mastercoin_ja.qm</file>
+        <file alias="pt">locale/mastercoin_pt.qm</file>
+        <file alias="ro_RO">locale/mastercoin_ro_RO.qm</file>
+        <file alias="ru">locale/mastercoin_ru.qm</file>
+        <file alias="zh_TW">locale/mastercoin_zh_TW.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,26 @@
+# /etc/conf.d/mastercoind: config file for /etc/init.d/mastercoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/mastercoin/mastercoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/mastercoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/mastercoind.pid"
+
+# Where to write mastercoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/mastercoind"
+
+# User and group to own mastercoind process
+#BITCOIND_USER="mastercoin"
+#BITCOIND_GROUP="mastercoin"
+
+# Path to mastercoind executable
+#BITCOIND_BIN="/usr/bin/mastercoind"
+
+# Nice value to run mastercoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

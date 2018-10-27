@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=MasterCoin
+Comment=MasterCoin P2P Cryptocurrency
+Comment[fr]=MasterCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=MasterCoin, eşten eşe kriptografik sanal para birimi
+Exec=mastercoin-qt %u
+Terminal=false
+Type=Application
+Icon=mastercoin128
+MimeType=x-scheme-handler/mastercoin;
+Categories=Office;Finance;

@@ -1,0 +1,26 @@
+[Unit]
+Description=MasterCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=mastercoin
+Group=mastercoin
+
+Type=forking
+PIDFile=/var/lib/mastercoind/mastercoind.pid
+
+ExecStart=/usr/bin/mastercoind -daemon -pid=/var/lib/mastercoind/mastercoind.pid \
+          -conf=/etc/mastercoin/mastercoin.conf -datadir=/var/lib/mastercoind
+
+ExecStop=-/usr/bin/mastercoin-cli -conf=/etc/mastercoin/mastercoin.conf \
+         -datadir=/var/lib/mastercoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
