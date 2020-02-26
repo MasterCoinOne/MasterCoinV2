@@ -3420,21 +3420,24 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 if (it == mapStakeSpent.end()) {
                     return false;
                 }
-                if (it->second <= pindexPrev->nHeight) {
+                if (it->second < pindexPrev->nHeight) {
                     return false;
                 }
             }
         }
 
          // if this is on a fork
-        if (!chainActive.Contains(pindexPrev) && pindexPrev != NULL) {
+        if (pindexPrev != NULL && !chainActive.Contains(pindexPrev)) {
             // start at the block we're adding on to
             CBlockIndex *last = pindexPrev;
 
              // while that block is not on the main chain
-            while (!chainActive.Contains(last) && pindexPrev != NULL) {
+            while (last != NULL && !chainActive.Contains(last)) {
                 CBlock bl;
-                ReadBlockFromDisk(bl, last);
+                if (!ReadBlockFromDisk(bl, last)) {
+                    return false;
+                }
+                
                 // loop through every spent input from said block
                 for (CTransaction t : bl.vtx) {
                     for (CTxIn in: t.vin) {
@@ -3450,7 +3453,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 }
 
                  // go to the parent block
-                last = pindexPrev->pprev;
+                last = last->pprev;
             }
         }
     }
